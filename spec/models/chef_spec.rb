@@ -35,4 +35,12 @@ RSpec.describe Chef, type: :model do
       expect(chef_2.uniq_ingredients).to eq [ingredient_2, ingredient_5, ingredient_6]
     end
   end
+
+  describe '#popular_ingredients' do
+    it 'returns the top three most used ingredients across all dishes' do
+      dish_3.update(chef: chef_1)
+
+      expect(chef_1.popular_ingredients).to eq [ingredient_6, ingredient_2, ingredient_1] 
+    end
+  end
 end

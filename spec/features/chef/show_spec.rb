@@ -65,4 +65,16 @@ RSpec.describe 'The chef show page', type: :feature do
       expect(current_path).to eq chef_ingredients_path(chef_1)
     end
   end
+
+  describe "Popular Ingredients" do
+    it 'displays the three most popular ingredients a chef uses in their dishes' do
+      dish_3.update(chef: chef_1)
+      visit chef_path(chef_1)
+
+      within("#popular_ingredients") do
+        expect("salt").to appear_before "butter"
+        expect("butter").to appear_before "salmon" 
+      end
+    end
+  end
 end

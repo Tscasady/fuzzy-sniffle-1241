@@ -10,4 +10,10 @@
   <%= f.submit "Add Dish" %>
 <% end %>
 
+<div id="popular_ingredients">
+  <% @chef.popular_ingredients.each do |ingredient| %>
+    <%= ingredient.name %>
+  <% end %>
+</div>
+
 <%= link_to "All Ingredients", chef_ingredients_path(@chef) %>
