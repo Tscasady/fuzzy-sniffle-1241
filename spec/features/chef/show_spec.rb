@@ -53,4 +53,16 @@ RSpec.describe 'The chef show page', type: :feature do
       expect(page).to have_content "Pasta"
     end
   end
+
+  describe "All Ingredients" do
+    it 'has a link to that chefs ingredient index page' do
+      visit chef_path(chef_1)
+
+      expect(page).to have_link "All Ingredients"
+      
+      click_link "All Ingredients"
+
+      expect(current_path).to eq chef_ingredients_path(chef_1)
+    end
+  end
 end
