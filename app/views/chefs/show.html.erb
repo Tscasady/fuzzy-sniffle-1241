@@ -1,0 +1,11 @@
+<p>Chef: <%= @chef.name %></p>
+<p>Dishes:</p>
+<% @chef.dishes.each do |dish| %>
+  <p><%= dish.name %></p>
+<% end %>
+
+<%= form_with model: @chef, local: true do |f| %>
+  <%= f.label :dish_id %>
+  <%= f.number_field :dish_id %>
+  <%= f.submit "Add Dish" %>
+<% end %>
