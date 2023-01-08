@@ -25,7 +25,8 @@ RSpec.describe Dish, type: :model do
     let!(:dish_ing_2) { DishIngredient.create!(dish: dish_2, ingredient: ingredient_4) }
 
     it 'returns the total calories in a dish' do
-      expect(dish_1.total_calories).to eq 2 
+      expect(dish_1.total_calories).to eq 500 
+      expect(dish_2.total_calories).to eq 100 
     end
   end
 end
