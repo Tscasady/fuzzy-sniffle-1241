@@ -1,3 +1,7 @@
 <p><%= "Dish Name: #{@dish.name}" %></p>
 <p><%= "Chef Name: #{@dish.chef.name}" %></p>
 <p><%= "Description: #{@dish.description}" %></p>
+<p>Ingredients: </p>
+<% @dish.ingredients.each do |ingredient| %>
+  <p><%= ingredient.name %></p>
+<% end %>
